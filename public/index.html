@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JWT Login</title>
+    <style media="screen">
+      body{
+        font-family: arial;
+      }
+      #errorMsg{
+        color:red;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <form id="jwtLoginForm" method="post" action="/login">
+      <p>
+        <label for="username">Username:</label><br>
+        <input id="username" type="text" name="username" value="test">
+      </p>
+      <p>
+        <label for="password">Password:</label><br>
+        <input id="password" type="text" name="password" value="pass">
+      </p>
+      <div id="errorMsg"></div>
+      <p>
+        <input type="submit" name="submit" value="Submit">
+      </p>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+      $('#jwtLoginForm').on('submit',function(e){
+        e.preventDefault();
+        //console.log($(this).serialize());
+        $.ajax({
+            url: 'login',
+            type : "POST",
+            dataType : 'json',
+            data : $(this).serialize(),
+            success : function(result) {
+                //console.log(result);
+                if(result.accessToken){
+                    sessionStorage.setItem('appConfig', JSON.stringify(result.accessToken) );
+                    location.href="/dash"
+                }
+
+                if(result.error){
+                  $('#errorMsg').html(result.error)
+                }else{
+                  $('#errorMsg').html("")
+                }
+            },
+            error: function(xhr, resp, text) {
+                console.log(xhr, resp, text);
+            }
+        })
+      })
+
+
+    </script>
+
+
+
+
+
+  </body>
+</html>

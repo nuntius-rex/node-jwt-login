@@ -1,0 +1,16 @@
+{
+  "name": "simple-node-jwt",
+  "version": "1.0.0",
+  "description": "A simple example of a JWT interface in Node ",
+  "main": "index.js",
+  "scripts": {
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jwt",
+    "node"
+  ],
+  "author": "Dan Guinn",
+  "license": "ISC"
+}
