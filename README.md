@@ -34,6 +34,6 @@ http://localhost:3000
 
 ## Other Examples
 
-<p>If you would like to see an example of a standard login with Node, checkout
-this version: <a href="https://github.com/nuntius-rex/node-standard-login">https://github.com/nuntius-rex/node-standard-login</a>.
+<p>If you would like to see an example of a standard login with Node, checkout this version: <br>
+<a href="https://github.com/nuntius-rex/node-standard-login">https://github.com/nuntius-rex/node-standard-login</a>.
 </p>
