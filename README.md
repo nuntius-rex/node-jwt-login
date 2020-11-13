@@ -2,7 +2,7 @@
 A simple JWT login example in Node JS.
 
 <p>This approach is to show a SPA login using JWT. Upon login you are redirected to a private dashboard area.
-The JWT information is confirmed augmented via a second call on the dashboard page load.</p>
+The JWT information is confirmed and then augmented via a second call on the dashboard page load.</p>
 
 ## Features
 <p>
