@@ -62,7 +62,7 @@ app.post('/login',(req, res) => {
     const user = users.find(u => { return u.username === username && u.password === password });
 
     if (user) {
-        // Generate an access token
+        // Generate an access token (never return credentials!)
         const accessToken = jwt.sign({ username: user.username,  role: user.role }, accessTokenSecret);
         res.json({
             accessToken
@@ -85,7 +85,7 @@ app.get('/dash',(req, res) => {
       return;
     }
 
-    console.log(req.ip);
+    //console.log(req.ip);
     res.sendFile('index.html', { root: path.join(__dirname, '/dash') });
 
 });
