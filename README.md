@@ -23,6 +23,7 @@ git clone https://github.com/nuntius-rex/node-jwt-login.git
 
 ## Run
 ```
+cd node-jwt-login
 npm install
 npm start
 ```
